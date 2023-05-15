@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PortfolioWeb</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    //edicion del aspecto del programa
+		const btn = document.getElementById("colores");
+		const btndos = document.getElementById("letras");
+		const cambio = document.getElementsByClassName("container-sm");
+		const container = document.getElementsByClassName("container");
+		//const container = document.querySelectorAll(".container");
+
+		function random(number) {
+			return Math.floor(Math.random() * (number + 1));
+		}
+
+		btn.addEventListener("click", () => {
+		const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+			//document.body.style.backgroundColor = rndCol;
+			for(let i=0; i< cambio.length; i++) {
+				cambio[i].style.backgroundColor = rndCol;
+			}			
+		});
+		
+		btndos.addEventListener("click", () => {
+		const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+			//document.body.style.backgroundColor = rndCol;
+			for(let i=0; i< container.length; i++) {
+				container[i].style.color = rndCol;
+			}
+			
+		});
+
+	
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
